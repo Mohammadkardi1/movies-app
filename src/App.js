@@ -3,7 +3,7 @@ import { NavBar } from "./Components/NavBar";
 import { MoviesList } from "./Components/MoviesList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MovieDetails } from "./Components/MovieDetails";
-
+import { Homepage } from "./Components/Homepage";
 
 
 function App () {
@@ -20,16 +20,16 @@ function App () {
 
   return (
     <div className="font body-color">
-      <NavBar/>
-      <Container>
+      {/* <NavBar/> */}
+      {/* <Container> */}
         <BrowserRouter>
           <Routes>
-            <Route path="/"  element={<MoviesList/>}/>
+            <Route path="/"  element={<Homepage/>}/>
             {/* id is a variable and it will be assigned later */}
             <Route path="/movie/:id" element={<MovieDetails/>}/>   
           </Routes>
         </BrowserRouter>
-      </Container>
+      {/* </Container> */}
     </div>
   );
 }

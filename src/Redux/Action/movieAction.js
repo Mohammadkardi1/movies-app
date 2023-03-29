@@ -8,7 +8,6 @@ export const getAllmovie = () => {
         const res = await axios.get(MovieAPI)
         dispatch({type:ALLMOVIES, data:res.data.results, pages:res.data.total_pages })
     }
-
 }
 
 export const searchedMovies = (word) => {

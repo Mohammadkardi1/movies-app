@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {Link, useParams} from "react-router-dom"
 import axios from 'axios'
+import { NavBar } from './NavBar'
+
 
 export const MovieDetails = () => {
     const params = useParams()
-
     const [movie, setMovie] = useState([])
 
     const getMovieDetailes = async () => {
@@ -19,37 +20,40 @@ export const MovieDetails = () => {
     }, [])
 
     return (
-        <div className='card-details'>
-            <div className="container"> 
-                <div className="row">
-                    <div className="col-6">
-                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                            alt="" />
+        <div className='pb-5'>
+            <NavBar/>
+                <div className='card-details'>
+                    <div className="container"> 
+                        <div className="row">
+                            <div className="col-6">
+                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                                    alt="" />
+                            </div>
+                            <div className="col-6">
+                                <p>Title: {movie.title}</p>
+                                <p>Release date: {movie.release_date}</p>
+                                <p>Vote Count: {movie.vote_count}</p>
+                                <p>Vote Average: {movie.vote_average}</p>
+                            </div>
+                            <div className="co-12">
+                                <h3>Story:</h3>
+                                <p>Overview</p>
+                                <p>{movie.overview}</p>
+                            </div>
+                            <div className="col-12 text-center">
+                                <Link to="/">
+                                    <button className='btn-grey'>
+                                        Go homepage
+                                    </button>
+                                </Link>
+                                <a href={movie.homepage}>
+                                <button className='btn-grey'>
+                                    Watch movie
+                                </button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-6">
-                        <p>اسم الفيلم: {movie.title}</p>
-                        <p>تاريخ الفيلم: {movie.release_date}</p>
-                        <p>عدد المقيمين: {movie.vote_count}</p>
-                        <p>التقييم: {movie.vote_average}</p>
-                    </div>
-                    <div className="co-12">
-                        <h3>القصة:</h3>
-                        <p>قصة الفيلم</p>
-                        <p>{movie.overview}</p>
-                    </div>
-                    <div className="col-12 text-center">
-                        <Link to="/">
-                            <button className='btn-grey'>
-                                عودة للرئيسية
-                            </button>
-                        </Link>
-                        <a href={movie.homepage}>
-                        <button className='btn-grey'>
-                            مشاهدة الفيلم
-                        </button>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     )

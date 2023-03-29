@@ -13,12 +13,12 @@ export const MoviesPagination = ({currentPage, pageCount}) => {
     return (
         <ReactPaginate
         breakLabel="..."  // you can here put any icon or other thing to appare instead of Ellipsis 
-        nextLabel="التالي"
+        nextLabel="next"
         onPageChange={handlePageClick}
         marginPagesDisplayed={2}
         pageRangeDisplayed={2}
         pageCount={pageCount}
-        previousLabel="السابق"
+        previousLabel="previous"
         containerClassName={"pagination justify-content-center p-3"}
         pageClassName ={"page-item"}
         pageLinkClassName ={"page-link"}

@@ -31,7 +31,7 @@ export const MoviesList = ({ currentPage}) => {
         <div className='row g-2'>
             {movies.length >= 1 ?  (movies.map((item) => {
                 return (<CardMovie key={item.id} movie={item} />)
-            })) : <h2 className='text-center'>لا يوجد أفلام لعرضها</h2>}
+            })) : <h2 className='text-center'>Wait a minute to display movies</h2>}
             <MoviesPagination  currentPage={currentPage} pageCount={pageCount}/>
         </div>
     )

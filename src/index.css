@@ -60,7 +60,7 @@
 }
 .navbar-style  .search-box i {
   position: absolute;
-  left: 11px;
+  right: 11px;
   top: 50%;
   color: black;
   font-size: 25px;
@@ -80,6 +80,7 @@
   display: none;
 }
 .card-movie:hover .overlay {
+  text-align: center;
   display: block;
   display:flex;
   flex-direction: column;
