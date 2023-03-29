@@ -12,14 +12,14 @@ export const getAllmovie = () => {
 
 export const searchedMovies = (word) => {
     return async (dispatch) => {
-        const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=45ff4c751063c2e9d0806b27508297f5&query=${word}&language=ar`)
+        const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=45ff4c751063c2e9d0806b27508297f5&query=${word}&language=en`)
         dispatch({type:ALLMOVIES, data:res.data.results, pages:res.data.total_pages}) 
     }
 }
 
 export const getPaginationPage = (pageNumber) => {
     return async (dispatch) => {
-        const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=45ff4c751063c2e9d0806b27508297f5&language=ar&page=${pageNumber}`)
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=45ff4c751063c2e9d0806b27508297f5&language=en&page=${pageNumber}`)
         dispatch({type:ALLMOVIES, data:res.data.results, pages:res.data.total_pages}) 
     }
 }
